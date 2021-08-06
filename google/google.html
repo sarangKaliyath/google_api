@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>google</title>
+</head>
+
+<style>
+
+    .border,#navbar{
+        /* border: 1px solid black; */
+    }
+    
+    .border1{
+        border: 1px solid black;
+    }
+
+    #navbar {
+        height: 100px;
+        display: flex;
+    }
+    
+    #navbar div:first-child img:first-child,.search,.icon{
+        height: 98px;
+    }
+    .google{
+        width: 8%;
+    }
+    .google>img{
+        width: 100%;
+    }
+    
+    .search {
+        width: 75%;
+    }
+    .hideInput{
+        display:flex;
+        flex-direction: row;
+        border: 1px solid gray;
+        width: 80%;
+        margin-top: 30px;
+        border-radius: 30px;
+    }
+    .hideInput>input{
+        height: 40px;
+        flex-grow: 2;
+        border:none;
+        outline: none;
+
+    }
+    .hideInput>input,.hideInput>button{
+        cursor: pointer;
+    }
+    .search div>button{
+        height: 43px;
+        width: 15%;
+        background-color: white;
+        border: none;
+        border-radius: 20px;
+    }
+    .search div button>svg{
+        width: 30%;
+        fill: #4285f4;
+    }
+    .search div button svg:first-child{
+        border-left: 1px solid rgb(228, 225, 225);
+        margin-right: 15px;
+        padding-left: 10px;
+    }
+    .icon{
+        width: 25%;
+        display:flex;
+        justify-content:center;
+    }
+    .icon>svg{
+        margin-right: 4%;
+        width: 8%;
+    }
+    .searchBox{
+
+        width: 80%;
+        height: 30px;
+    }
+    .searchContent {
+        position: absolute;
+        width: 54.5%;
+        height: 200px;
+        overflow-y: scroll;
+        border-top: none;
+        background-color: white;
+        border-radius: 20px;
+        display: none;
+        margin-left: 3.5%;
+    }
+    .searchContent::-webkit-scrollbar{
+        display: none;
+    }
+    .searchBox,.hideInput{
+        margin-left: 5%;
+    }
+    .searchInfo{
+        height:30px;
+        padding: 5px;
+        border-bottom: 1px solid rgb(179, 178, 178);
+    }
+    #container{
+        margin-top: 10px;
+        height: 600px;
+        display: flex;
+    }
+    .page{
+        margin-left: 6%;
+        width: 56%;
+        height: 100%;
+    }
+    .sidePage{
+        width: 38%;
+        height:100%;
+        border-color: red;
+    }
+    .results_time{
+        margin-left: 11%;
+    }
+    .pageList{
+
+    }
+    ul{
+        list-style-type: none;
+    }
+    .alingList{
+        margin: 5px;
+        font-size: 16px;
+    }
+    .itemsMargin{
+        margin: 70px 70px;
+    }
+    .searchMargin{
+        margin:30px 30px;
+    }
+    .top,.bottom{
+        padding: 10px;
+        width:96.7%;
+    }
+    .top{
+        height:20%;
+    }
+    .bottom{
+        height:40%;
+    }
+    
+</style>
+<body>
+
+    <div id="navbar">
+
+        <div class="google">
+            <img class="border" src="https://thedirtyeasel.com/wp-content/uploads/google-logo.png">
+        </div>
+        <div class="search border">
+            
+            <div class="hideInput">
+                <input oninput="search()" type="text" placeholder="Search" class="searchBox">
+                <button>
+
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                        y="0px" viewBox="0 0 271.99 271.99" style="enable-background:new 0 0 271.99 271.99;" xml:space="preserve">
+                        <g>
+                            <path
+                                d="M211.591,164.335c-4.782-1.35-9.757,1.429-11.11,6.211c-7.297,25.798-29.432,44.598-55.486,48.164v-10.078
+                    		c27.722-4.337,49-28.378,49-57.298V58c0-31.981-26.019-58-58-58s-58,26.019-58,58v93.333c0,28.92,21.278,52.961,49,57.298v10.078
+                    		c-26.053-3.565-48.188-22.365-55.486-48.164c-1.353-4.782-6.328-7.563-11.11-6.21c-4.783,1.353-7.563,6.327-6.21,11.11
+                    		c9.482,33.52,38.713,57.723,72.806,61.387v17.157h-9.056c-4.971,0-9,4.029-9,9s4.029,9,9,9h36.112c4.971,0,9-4.029,9-9
+                    		s-4.029-9-9-9h-9.056v-17.157c34.093-3.665,63.325-27.868,72.806-61.389C219.154,170.662,216.374,165.688,211.591,164.335z
+                    		 M95.995,151.333V58c0-22.056,17.944-40,40-40s40,17.944,40,40v93.333c0,22.056-17.944,40-40,40S95.995,173.389,95.995,151.333z" />
+                        </g>
+                    </svg>
+
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                        y="0px" viewBox="0 0 487.95 487.95" style="enable-background:new 0 0 487.95 487.95;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M481.8,453l-140-140.1c27.6-33.1,44.2-75.4,44.2-121.6C386,85.9,299.5,0.2,193.1,0.2S0,86,0,191.4s86.5,191.1,192.9,191.1
+                    			c45.2,0,86.8-15.5,119.8-41.4l140.5,140.5c8.2,8.2,20.4,8.2,28.6,0C490,473.4,490,461.2,481.8,453z M41,191.4
+                    			c0-82.8,68.2-150.1,151.9-150.1s151.9,67.3,151.9,150.1s-68.2,150.1-151.9,150.1S41,274.1,41,191.4z" />
+
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="border1 searchContent">
+                <ul id="list"></ul>
+            </div>
+    
+        </div>
+
+        <div class="icon border">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" viewBox="0 0 489.8 489.8" style="enable-background:new 0 0 489.8 489.8;" xml:space="preserve">
+                <g>
+                    <g>
+                        <g>
+                            <path d="M469.1,182.95h-38.2c-3.1-8.3-6.2-16.6-10.3-23.8l26.9-26.9c8.3-8.2,8.3-20.6,0-28.9l-60-60c-8.2-8.3-20.6-8.3-28.9,0
+            				l-27.9,27.9c-7.2-3.1-15.5-6.2-22.7-9.3v-39.3c0-11.4-9.3-20.7-20.7-20.7h-84.8c-11.4,0-20.7,9.3-20.7,20.7v37.1
+            				c-8.2,3.1-15.5,6.2-22.7,9.3l-27.9-27.9c-8.2-8.3-20.6-8.3-28.9,0l-60,60c-8.3,8.2-8.3,20.6,0,28.9l26.9,26.9
+            				c-4.1,8.3-7.2,15.5-10.3,23.8H20.7c-11.4,0-20.7,9.3-20.7,20.7v84.8c0,11.4,9.3,20.7,20.7,20.7h35.1c3.1,8.3,6.2,16.5,10.3,24.8
+            				l-25.8,25.8c-4.1,4.1-11.6,16.3,0,28.9l60,60c8.2,8.3,20.6,8.3,28.9,0l24.8-24.8c8.2,5.2,16.5,8.3,25.8,11.4v34.1
+            				c0,11.4,9.3,20.7,20.7,20.7h84.8c11.4,0,20.7-9.3,19.7-18.5v-34.1c8.2-3.1,17.5-7.3,25.8-11.4l24.8,24.8c8.2,8.3,20.6,8.3,28.9,0
+            				l60-60c8.3-8.2,8.3-20.6,0-28.9l-25.8-25.8c4.1-8.3,7.2-16.5,10.3-24.8h40.1c11.4,0,20.7-9.3,20.7-20.7v-84.8
+            				C489.8,192.25,480.5,182.95,469.1,182.95z M445.6,266.75h-31c-9.3,0-17.5,6.2-19.6,15.5c-4.2,15.5-9.3,30-17.6,43.4
+            				c-5.2,8.3-3.1,18.6,3.1,24.8l21.7,21.7l-31,31l-20.7-20.7c-6.2-7.2-16.5-8.3-24.8-3.1c-14.5,8.3-29,14.5-44.5,18.6
+            				c-9.3,2-15.5,10.3-15.5,19.6v30h-44.5v-0.1h-1v-30c0-9.3-6.2-17.5-15.5-19.6c-15.6-4.1-31.1-10.3-44.5-18.6
+            				c-8.3-5.2-18.6-3.1-24.8,3.1l-20.7,20.7l-31-31l21.7-21.7c6.2-7.2,8.3-16.5,3.1-24.8c-8.3-13.4-14.5-27.9-17.6-43.4
+            				c-2-9.3-10.3-15.5-19.6-15.5h-31v-44.5h33.1c9.3,0,17.5-6.2,19.6-15.5c3.1-14.5,9.3-28,17.6-41.4c5.2-8.3,3.1-18.6-3.1-24.8
+            				l-23.8-23.8l31-31l23.8,23.8c7.2,6.2,16.5,8.3,24.8,3.1c13.5-7.2,26.9-13.4,41.4-16.5c9.3-2,15.5-10.3,15.5-19.6v-34.1h44.5v35.2
+            				c0,9.3,6.2,17.5,15.5,19.6c14.5,3.1,29,9.3,41.4,16.5c8.3,5.2,18.6,3.1,24.8-3.1l24.8-24.8l31,31l-23.8,23.8
+            				c-7.2,6.2-8.3,16.5-3.1,24.8c7.3,12.5,13.5,26.9,17.6,41.4c2,9.3,10.3,15.5,19.6,15.5h33.1V266.75z" />
+                            <path d="M242.9,132.25c-62,0-112.7,50.7-112.7,112.7s50.7,112.7,112.7,112.7c62.1,0,112.7-50.7,112.7-112.7
+            				S304.9,132.25,242.9,132.25z M242.9,317.35c-39.3,0-72.4-32.1-72.4-72.4c0-39.3,32.1-72.4,72.4-72.4c40.3,0,72.4,32.1,72.4,72.4
+            				C315.3,284.25,282.2,317.35,242.9,317.35z" />
+                        </g>
+                    </g>
+                </g>
+            </svg>
+
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 6C8 7.10457 7.10457 8 6 8C4.89543 8 4 7.10457 4 6C4 4.89543 4.89543 4 6 4C7.10457 4 8 4.89543 8 6Z"
+                    fill="currentColor" />
+                <path
+                    d="M8 12C8 13.1046 7.10457 14 6 14C4.89543 14 4 13.1046 4 12C4 10.8954 4.89543 10 6 10C7.10457 10 8 10.8954 8 12Z"
+                    fill="currentColor" />
+                <path
+                    d="M6 20C7.10457 20 8 19.1046 8 18C8 16.8954 7.10457 16 6 16C4.89543 16 4 16.8954 4 18C4 19.1046 4.89543 20 6 20Z"
+                    fill="currentColor" />
+                <path
+                    d="M14 6C14 7.10457 13.1046 8 12 8C10.8954 8 10 7.10457 10 6C10 4.89543 10.8954 4 12 4C13.1046 4 14 4.89543 14 6Z"
+                    fill="currentColor" />
+                <path
+                    d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"
+                    fill="currentColor" />
+                <path
+                    d="M14 18C14 19.1046 13.1046 20 12 20C10.8954 20 10 19.1046 10 18C10 16.8954 10.8954 16 12 16C13.1046 16 14 16.8954 14 18Z"
+                    fill="currentColor" />
+                <path
+                    d="M18 8C19.1046 8 20 7.10457 20 6C20 4.89543 19.1046 4 18 4C16.8954 4 16 4.89543 16 6C16 7.10457 16.8954 8 18 8Z"
+                    fill="currentColor" />
+                <path
+                    d="M20 12C20 13.1046 19.1046 14 18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12Z"
+                    fill="currentColor" />
+                <path
+                    d="M18 20C19.1046 20 20 19.1046 20 18C20 16.8954 19.1046 16 18 16C16.8954 16 16 16.8954 16 18C16 19.1046 16.8954 20 18 20Z"
+                    fill="currentColor" />
+            </svg>
+        </div>
+
+
+    </div>
+
+
+    <div class="searchInfo border">
+
+        <span class="results_time"></span>
+
+    </div>
+
+
+    <div id="container" class="border">
+
+        <div class="page border">
+
+            <ul class="pageList">
+
+            </ul>
+
+        </div>
+        <div class="sidePage border">
+
+            <div class="top border"></div>
+            <div class="bottom border"></div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+<script>
+
+    var timerId;
+
+    async function throttleFunction(){
+
+        if(timerId){
+            return false;
+        }
+        
+        setTimeout((el) => {
+
+            search();
+            timerId = null;
+            
+        }, 800);
+
+
+    }
+
+    
+
+    async function search(){
+
+
+        let input = document.querySelector(".searchBox").value;
+        // console.log('input:', input)
+
+        let view = document.querySelector(".searchContent");
+
+        view.style.display = "block";
+
+        if(input == ""){
+            view.style.display = "none";
+        }
+
+        if(input.length<=3){
+            return false;
+        }
+
+        let res = await fetch (`http://api.serpstack.com/search?access_key=3f832cab8b9ac01f1a2f0a10ee1d6c33&query=${input}`)
+
+        let data = await res.json(); 
+        // console.log('data:', data)
+
+        getData(data);
+    }
+
+    async function getData(temp){
+
+        let data = await temp;
+        console.log('data:', data)
+
+        let time_taken = data.search_information.time_taken_displayed;
+        let total_results = data.search_information.total_results;
+
+
+        let total_time = document.querySelector(".results_time");
+
+        total_time.innerHTML = `About ${total_results} (${time_taken} seconds)`;
+
+
+        let ul = document.querySelector("#list");
+
+        ul.setAttribute("class", "alingList")
+
+        let ul_page = document.querySelector(".pageList");
+
+
+
+
+
+        data.organic_results.forEach(({title,url,domain,snippet},index)=>{
+
+            // console.log(title,url)
+
+            // ****************** for search bar ******************
+            if(index > 9){return};
+                
+            let a_search = document.createElement("a");
+            let li_search = document.createElement("li");
+
+            a_search.innerHTML = title;
+            a_search.href = url;
+
+            a_search.style.textDecoration = "none";
+
+            li_search.append(a_search);
+
+            li_search.setAttribute("class","searchMargin")
+
+            ul.append(li_search);
+            
+
+            // ******************* for page **************************
+
+
+            let li_page = document.createElement("li");
+            let p_page = document.createElement("p");
+            let a_page = document.createElement("a");
+            let s_page = document.createElement("p");
+
+
+            
+
+            p_page.innerHTML = domain;
+
+            a_page.href = url;
+            a_page.innerHTML = title;
+
+            a_page.style.fontSize = "20px";
+
+            a_page.style.textDecoration = "none";
+
+            if(snippet != ""){
+                s_page.innerHTML = snippet;
+            }
+
+            ul_page.append(li_page,a_page,s_page);
+
+            ul_page.setAttribute("class", "itemsMargin")
+
+            
+
+        });
+
+
+        let top = document.querySelector(".top");
+        let bottom = document.querySelector(".bottom");
+
+
+        let temp_data ={
+
+            title: data.knowledge_graph.title,
+            type: data.knowledge_graph.type,
+            description: data.knowledge_graph.description,
+
+        }
+
+        let p_title = document.createElement("p");
+
+        p_title.innerHTML = temp_data.title;
+
+        p_title.style.fontSize = "30px";
+
+        let p_type = document.createElement("p");
+
+        p_type.innerHTML = temp_data.type;
+
+        p_type.style.color = "#70757a";
+
+        top.append(p_title);
+        top.append(p_type);
+
+
+
+        let p_description = document.createElement("p");
+
+        p_description.innerHTML = temp_data.description;
+
+
+        bottom.append(p_description);
+
+        
+
+    }
+
+
+</script>

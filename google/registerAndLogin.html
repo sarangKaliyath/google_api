@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<style>
+
+    .border{
+        border: 1px solid black;
+    }
+    .container{
+        display: flex;
+        width: 50%;
+        margin: auto;
+        margin-top: 10%;
+    }
+
+    #register {
+        height: 470px;
+    }
+    #login{
+        height: 200px;
+        margin-left: 10%;
+    }
+    #register,#login{
+        width: 50%;
+        font-size: 20px;
+    }
+    input{
+        width: 97%;
+        margin-bottom: 10px;
+        height: 30px;
+    }
+    form input:last-child{
+        margin-top: 10px;
+        width: 70%;
+        height: 30px;
+        margin-left: 12%;
+    }
+    
+
+    
+
+
+</style>
+<body>
+
+    <div class="container">
+        <div id="register" class="border">
+            <form onsubmit="register(event)">
+                
+                Name: <input type="text" placeholder="name"  id="in1">
+                Email: <input type="email" placeholder="email" id="in2">
+                Password: <input type="password" placeholder="password" id="in3">
+                Username: <input type="text" placeholder="username" id="in4">
+                Mobile: <input type="text" placeholder="mobile" id="in5">
+                Description: <input type="text" placeholder="description" id="in6">
+                <input type="submit" value="Register">
+
+            </form>
+        </div>
+
+        <div id="login" class="border">  
+
+            <form onsubmit="login(event)">
+
+                Username:<input type="text" placeholder="username" id="in7"><br>
+                Password:<input type="password" placeholder="password" id="in8">
+                <input type="submit" value="Login">
+
+            </form>
+            
+        </div>
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+        async function register(e){
+            e.preventDefault();
+
+
+            let formData = {
+                
+                name: document.getElementById("in1").value,
+                email: document.getElementById("in2").value,
+                password: document.getElementById("in3").value,
+                username: document.getElementById("in4").value,
+                mobile: document.getElementById("in5").value,
+                description: document.getElementById("in6").value,
+            }
+
+            formData = JSON.stringify(formData);
+
+            fetch("https://masai-api-mocker.herokuapp.com/auth/register",{
+
+                method: "POST",
+
+                body: formData,
+
+                headers: {
+
+                    "Content-Type": "application/json",
+
+                }
+
+            })
+
+            .then((res)=>{return res.json()})
+
+            .then((res)=>{
+                console.log(res);
+                alert("Registration Successful")
+            })
+            .catch((err)=>{
+                console.log(err);
+                alert("Registration Failure")
+            })
+        
+
+
+        }
+
+        function login(e) {
+
+            e.preventDefault();
+
+
+            let formData = {
+                username: document.getElementById("in7").value,
+                password: document.getElementById("in8").value,
+            }
+
+            let temp = JSON.stringify(formData);
+
+            fetch("https://masai-api-mocker.herokuapp.com/auth/login",{
+
+                type: "no-cors",
+
+                method:"POST",
+
+                
+
+                body:temp,
+
+                headers:{
+
+                    "Content-Type": "application/json",
+                },
+
+            })
+            .then((res)=>{return res.json()})
+
+            .then((res)=> {
+                console.log(res)
+                alert("login successful")
+
+                window.location.href = "google.html"
+
+                // let u = formData.username
+                // let t = res.token
+
+
+                // getData(u,t)
+            })
+
+            .catch((err)=>{console.error(err)});
+
+
+        }
+
+        // function getData(username,token){
+
+        //     fetch(`https://masia-api-mocker.herokuapp.com/user/${username}`,{
+
+        //         mode:"no-cors",
+
+        //         headers: {
+
+        //             'Authorization': `Bearer ${token}`
+
+
+        //         },
+
+        //     })
+        //     .then((res)=>{
+        //         return res.json();
+        //     })
+        //     .then((res)=>{
+        //         console.log(res);
+        //     })
+        //     .catch((err)=>{console.log(err)})
+
+        // }
+
+</script>
